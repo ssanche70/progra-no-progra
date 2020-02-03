@@ -1,0 +1,158 @@
+while front_is_clear():
+    move()
+    if at_goal():
+        done()
+    if wall_in_front():
+        turn_left()
+    if object_here():
+        take()
+
+def saludar():
+    print ("Hola soy Reborg")
+    print ("Sigo tus ordenes")
+    
+saludar()
+
+def caminarEnLinea():
+    repeat 9:
+        move()
+        
+caminarEnLinea()
+
+def subirEscalon():
+    if wall_in_front():
+       turn_left()
+       move()
+       repeat 3:
+           turn_left()
+       move()
+
+
+def subirEscaleras():
+    repeat 9:
+        subirEscalon()
+subirEscaleras()
+
+-------------------
+
+ESCALERA
+
+def ponerManzana():
+    put("apple")
+def ponerZana():
+    put("carrot")
+
+def subirEscalonManzana():
+    if wall_in_front():
+       turn_left()
+       move()
+       repeat 3:
+           turn_left()
+       move()
+       ponerManzana()
+       
+def subirEscalonZana():
+    if wall_in_front():
+       turn_left()
+       move()
+       repeat 3:
+           turn_left()
+       move()
+       ponerZana()
+              
+def subirEscaleras():
+    repeat 4:
+        subirEscalonManzana()
+        subirEscalonZana()
+        
+    
+    subirEscalonManzana()
+   
+        
+subirEscaleras()
+
+--------------
+
+ESCALERA ENGALLADA
+
+"""
+Descipcion: Este es el primer programa en Reeborg, 
+carro que sube escaleras, pone objetos, las baja y los recoge.
+Autor: Sebastian Sanchez
+Fecha: 03/02/2020
+"""
+
+def saludar():
+    print("Hola soy Reborg y sigo tus ordenes")
+    
+def despedirse():
+    print("Hemos terminado, mision cumplida")
+
+def ponerManzana():
+    put("apple")
+def ponerZana():
+    put("carrot")
+
+def subirEscalonManzana():
+    if wall_in_front():
+       turn_left()
+       move()
+       repeat 3:
+           turn_left()
+       move()
+       ponerManzana()
+       
+def subirEscalonZana():
+    if wall_in_front():
+       turn_left()
+       move()
+       repeat 3:
+           turn_left()
+       move()
+       ponerZana()
+              
+def subirEscaleras():
+    repeat 4:
+        subirEscalonManzana()
+        subirEscalonZana()
+        
+    
+    subirEscalonManzana()
+   
+        
+def turnRight():
+    repeat 3:
+        turn_left()
+
+def bajarEscalon():
+    turnRight()
+    move()
+    turn_left()
+    move()
+    take()
+
+def primerEscalon():
+    repeat 2:
+        turn_left()
+    move()
+    turn_left()
+    move()
+    
+def bajarEscalera():
+    take()
+    primerEscalon()
+    take()
+    repeat 8:
+        bajarEscalon()
+
+def ejecutarMision():
+    saludar()
+    ponerZana()
+    subirEscaleras()
+    bajarEscalera()
+    despedirse()
+
+ejecutarMision()
+
+    
+    
