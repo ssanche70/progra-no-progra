@@ -1,0 +1,109 @@
+"""
+Descripción: Este codigo permite que reeborg realice 4 
+movimientos diferentes; horizontal hacia la derecha, 
+vertical hacia arriba y dos diferentes zig zag.
+Autores: Sebastian Sanchez y Diana Puentes
+Fecha: Febrero 5 de 2020
+
+"""
+
+def horizontal():
+    repeat 4:
+        move()
+
+"""horizontal()"""
+
+"""
+Descripción: Esta función permite mover horizontal 
+izquierda derecha
+Pre: Reborg está en (1,1)
+Pos: Reborg está en (1,5)
+"""
+
+
+
+def vertical():
+    turn_left()
+    horizontal()
+
+"""vertical()"""
+
+"""
+Descripción: Esta función permite mover vertical de 
+abajo hacia arriba
+Pre: Reborg está en (1,1)
+Pos: Reborg está en (5,1)
+"""
+
+def turnRight():
+    repeat 3:
+        turn_left()
+        
+"""
+Descripción: Esta función permite girar hacia la derecha
+Pre: Reborg está en (x,x) mirando hacia la posición inicial
+Pos: Reborg está en (x,x) mirando hacia la derecha
+"""
+        
+def giroIzq():
+    turn_left()
+    move()
+    turn_left()
+    horizontal()
+    
+"""
+Descripción: Esta función permite girar hacia la izquierda
+y mover en horizontal
+Pre: Reborg está en (x,y) mirando hacia la posición inicial
+Pos: Reborg está en (x+4,y+1) mirando hacia la izquierda
+"""
+
+def giroDer():
+    turnRight()
+    move()
+    turnRight()
+    horizontal()
+    
+"""
+Descripción: Esta función permite girar hacia la derecha
+y mover en horizontal
+Pre: Reborg está en (x,y) mirando hacia la posición inicial
+Pos: Reborg está en (x+1,y+4) mirando hacia la izquierda
+"""
+
+def zig_zag1():
+    horizontal()
+    giroIzq()
+    giroDer()
+    giroIzq()
+    giroDer()
+
+"""zig_zag1()"""
+
+"""
+Descripción: Esta función permite hacer un zig zag ascendente
+Pre: Reborg está en (1,1) mirando hacia la derecha
+Pos: Reborg está en (5,5) mirando hacia la derecha
+"""
+
+def zig_zag2():
+    vertical()
+    giroDer()
+    giroIzq()
+    giroDer()
+    giroIzq()
+    
+zig_zag2()
+
+"""
+Descripción: Esta función permite hacer un zig zag en 
+aumento de izquierda a derecha
+Pre: Reborg está en (1,1) mirando hacia arriba
+Pos: Reborg está en (5,5) mirando hacia arriba
+"""
+    
+ 
+    
+    
+        
+    
