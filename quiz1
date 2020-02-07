@@ -1,0 +1,96 @@
+"""
+Descripción: Reeborg debe poner filas de cuadrados y triángulos
+de manera intercalada en un mundo de 5x5.
+Autor: Sebastian Sanchez
+Versión: 1.1
+Fecha: 7-feb-2020
+"""
+
+#Cambia el estilo del rastro del robot
+set_trace_style("invisible")
+
+"""
+Descripción : Reeborg cambia su dirección 90° a la derecha
+Precondición: Verdadero
+Poscondición: Reeborg mira al Sur, si estaba mirando al Este    ||
+              Reeborg mira al Oeste, si estaba mirando al Sur   ||
+              Reeborg mira al Norte, si estaba mirando al Oeste ||
+              Reeborg mira al Este, si estaba mirando al Norte.
+"""
+def girar_derecha(): # [!] ALERTA: NO MODIFICAR.
+    repeat 3:   
+        turn_left()  
+
+        
+"""
+Descripción: Reeborg se desplaza 4 casillas en la dirección actual y pone cuadros.
+Precondición: No hay una pared enfrente en al menos 4 casillas.
+Poscondición: Reeborg se desplaza 4 casillas en la dirección actual y deja 4 cuadros. 
+"""
+def desplazar_4casillasSQR():
+    repeat 4:        
+        move()
+        put("square")
+        
+        
+"""
+Descripción: Reeborg se desplaza 4 casillas en la dirección actual y pone triangulos.
+Precondición: No hay una pared enfrente en al menos 4 casillas.
+Poscondición: Reeborg se desplaza 4 casillas en la dirección actual y deja 4 triangulos. 
+"""
+def desplazar_4casillasTRI():
+    repeat 4:        
+        move()
+        put("triangle")
+        
+
+# ************ COMPLETAR ESPECIFICACIÓN: 15 puntos ***************
+"""
+Descripción: Esta funcion ayuda a Reeborg a subir a la izquierda
+Precondición: Reborg está en (x,y) mirando al este
+Poscondición: Reborg está en (x,y+1) mirando al oeste
+"""
+def girar_izquierda_subir(): # [!] ALERTA: NO MODIFICAR.
+    turn_left()   
+    move()
+    turn_left()       
+    
+# ************ COMPLETAR ESPECIFICACIÓN: 15 puntos ***************
+"""
+Descripción: Esta funcion ayuda a Reeborg a subir a la derecha
+Precondición: Reborg está en (x,y) mirando al oeste
+Poscondición: Reborg está en (x+1,y) mirando al este
+"""
+def girar_derecha_subir(): # [!] ALERTA: NO MODIFICAR.
+    girar_derecha()   
+    move()
+    girar_derecha()
+    
+"""
+Descripción: Reeborg recorre un el tablero de 5x5 y pone filas de cuadrados
+y triángulos de manera intercalada.
+Precondición: Reeborg está en la posición (1,1), en dirección Este, y en su   
+              bolsa contiene N cuadrados y M triángulos, con N>= 15 & M>=10.
+Poscondición: Reeborg está en la posición (5,5), en dirección Este, y en su  
+              bolsa contiene N-15 cuadrados y M-10 triángulos.
+"""
+# ************ CODIFICAR SEGÚN ESPECIFICACIÓN: 70 puntos ***************
+def recorrer_mundo():
+    put("square")
+    desplazar_4casillasSQR()
+    girar_izquierda_subir()
+    put("triangle")
+    desplazar_4casillasTRI()
+    girar_derecha_subir()
+    put("square")
+    desplazar_4casillasSQR()
+    girar_izquierda_subir()
+    put("triangle")
+    desplazar_4casillasTRI()
+    girar_derecha_subir()
+    put("square")
+    desplazar_4casillasSQR()
+    
+    
+#Ejecución del método principal: recorrer_mundo().     
+recorrer_mundo()            
