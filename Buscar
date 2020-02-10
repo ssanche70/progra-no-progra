@@ -1,6 +1,13 @@
 def horizontal():
     repeat 9:
         move()
+        if object_here():
+            take()
+        
+   
+def vertical():
+    turn_left()
+    horizontal()
         
 def turnRight():
     repeat 3:
@@ -18,8 +25,9 @@ def giroDer():
     turnRight()
     horizontal()
     
-def zig_zag1():
-    horizontal()
+def zig_zag2():
+    vertical()
+    giroDer()
     giroIzq()
     giroDer()
     giroIzq()
@@ -29,11 +37,11 @@ def zig_zag1():
     giroIzq()
     giroDer()
     
+    
 def buscar():
-    if object_here():
-        take()
-        done()
-    else:
-        zig_zag1()
+    zig_zag2()
+        
+        
 
 buscar()
+
