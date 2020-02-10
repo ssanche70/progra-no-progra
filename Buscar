@@ -1,0 +1,39 @@
+def horizontal():
+    repeat 9:
+        move()
+        
+def turnRight():
+    repeat 3:
+        turn_left()
+        
+def giroIzq():
+    turn_left()
+    move()
+    turn_left()
+    horizontal()
+    
+def giroDer():
+    turnRight()
+    move()
+    turnRight()
+    horizontal()
+    
+def zig_zag1():
+    horizontal()
+    giroIzq()
+    giroDer()
+    giroIzq()
+    giroDer()
+    giroIzq()
+    giroDer()
+    giroIzq()
+    giroDer()
+    
+def buscar():
+    if object_here():
+        take()
+        done()
+    else:
+        zig_zag1()
+
+buscar()
