@@ -2,8 +2,37 @@ def horizontal():
     repeat 9:
         move()
         if object_here():
-            take()
+            print("El objeto escondido es", queEs())
+
         
+def queEs():
+    nombre = ""
+    
+    if object_here("dandelion"):
+       nombre = "diente de leon"
+        
+        
+        
+    elif object_here("leaf"):
+         nombre = "hoja"
+        
+        
+    elif object_here("apple"):
+         nombre = "manzana"
+         
+        
+    elif object_here("banana"):
+         nombre = "banano"
+         
+       
+    
+    elif object_here("tulip"):
+         nombre = "flor"
+         
+         
+    take()  
+    
+    return nombre
    
 def vertical():
     turn_left()
@@ -14,16 +43,22 @@ def turnRight():
         turn_left()
         
 def giroIzq():
-    turn_left()
-    move()
-    turn_left()
-    horizontal()
+    if object_here():
+            take()
+    else:
+        turn_left()
+        move()
+        turn_left()
+        horizontal()
     
 def giroDer():
-    turnRight()
-    move()
-    turnRight()
-    horizontal()
+    if object_here():
+            take()
+    else:
+        turnRight()
+        move()
+        turnRight()
+        horizontal()
     
 def zig_zag2():
     vertical()
