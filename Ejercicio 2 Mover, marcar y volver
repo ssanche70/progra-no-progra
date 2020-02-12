@@ -1,0 +1,75 @@
+logoReeborg's World
+ World Info  Reeborg's keyboard Additional options
+ 
+
+reverse step run step pause stop reload 
+ 80/80   
+Python CodelibraryA↑AA↓A
+"""Descripción: Este codigo permite que reeborg realice la
+busqueda de un punto para marcarlo, dejando una estrella y 
+regresando a la posición original.
+Autores: Sebastian Sanchez y Diana Puentes
+Fecha: Febrero 12 de 2020"""
+​
+"""
+Descripción: Esta función permite mover a Reeborg hasta
+un punto dado y marcar dicha posición con una estrella
+Pre: Reborg está en (1,1) mirando al este
+Pos: Reborg está en (4,8) mirando al oeste
+"""
+​
+​
+def marcar_punto(x,y):
+    contador = 1
+    contador2 = 1
+    while (contador < x):
+        move()
+        contador = contador+1
+    turn_left()
+    while (contador2 < y):
+        move()
+        contador2 = contador2+1
+    put("star")
+    turn_left()
+    
+"""
+Descripción: Esta función permite mover a Reeborg hasta
+la posición inicial.
+Pre: Reborg está en (4,8) mirando al oeste
+Pos: Reborg está en (1,1) mirando al este
+"""
+    
+def volver_a_casa(x,y):
+    contador3 = 4
+    contador4 = 8
+    while (contador3 > 1):
+        move()
+        contador3 = contador3-1
+    turn_left()
+    while (contador4 > 1):
+        move()
+        contador4 = contador4-1
+    turn_left()
+    
+"""
+Descripción: Esta función permite mover a Reeborg desde
+una posición inicial, hasta otra dependiendo los parámetros
+se marca con una estrella y regresa a la posición (1,1)
+Pre: Reborg está en (1,1) mirando al este
+Pos: Reborg está en (1,1) mirando al este
+"""
+    
+def marcar_y_volver():
+    marcar_punto(4,8)
+    volver_a_casa(4,8)
+​
+marcar_y_volver()
+​
+​
+    
+Basic commands
+Defining
+Loops
+Decisions
+Conditions
+Using variables
