@@ -1,0 +1,95 @@
+"""
+------------------------------------------------------------------------------
+Descripción: Reeborg debe recoger todas las manzanas que se han caido en su 
+mundo unidimensional, luego depositarlas en un canasto, para luego volver a 
+casa a descansar. 
+------------------------------------------------------------------------------
+Autor: Sebastian Sanchez
+Versión: 2.0
+Fecha: 14-feb-2020
+"""
+
+
+"""
+Descripción : Reeborg cambia su dirección 180° 
+Precondición: Verdadero
+Poscondición: Reeborg mira al Sur, si estaba mirando al Norte y viceversa ||
+              Reeborg mira al Oeste, si estaba mirando al Este y viceversa. 
+"""
+def girar_180(): # [!] ALERTA: NO MODIFICAR.
+    repeat 2:   
+        turn_left()    
+   
+"""
+Descripción : Se desplaza en línea recta y recoge los elementos que encuentra.
+Precondición: Reeborg está en la posición (1,1), en dirección Este.
+Poscondición: Reeborg está en la posición (x,1) con x>1, en dirección Este,   
+              y su bolsa contiene M manzanas, con M>0.
+Retorno     : El número de elementos recolectados  
+"""
+# ************ CODIFICAR SEGÚN ESPECIFICACIÓN: 40 puntos ***************
+def recolectar_manzanas():
+    cantidad_manzanas=0
+    
+    while not wall_in_front():
+        move()
+        if object_here():
+            take()
+            cantidad_manzanas = cantidad_manzanas+1
+        
+        
+        
+    
+           
+    return cantidad_manzanas
+
+    
+"""
+Descripción: Deposita en la posición actual todos los elementos de su bolsa.
+Precondición: Reeborg está en la posición (x,1) con x>1, en dirección Este,   
+              y su bolsa contiene M manzanas, con M>0.
+Poscondición: Reeborg está en la posición (x,1) con x>1, en dirección Este,  
+              y su bolsa está vacía.
+"""
+# ************ CODIFICAR SEGÚN ESPECIFICACIÓN: 30 puntos ***************
+def depositar_manzanas(): 
+    while carries_object():
+        put()
+        
+    
+    
+
+        
+"""
+Descripción: Se deplaza en línea recta x casillas hasta llegar a (1,1).
+Precondición: Reeborg está en la posición (x,1) con x>1, en dirección Oeste.
+Poscondición: Reeborg está en la posición (1,1), en dirección Oeste.
+"""
+# ************ CODIFICAR SEGÚN ESPECIFICACIÓN: 25 puntos ***************
+def volver_a_casa():
+    while front_is_clear():
+        move()
+    done()
+        
+   
+    
+    
+
+ # ************ ESPECIFICAR MÉTODO: 5 puntos ***************
+"""
+Descripción: Reborg comienza a moverse, mientras recolecta un numero de manzanas
+luego las deja en el final del recorrido, gira a 180 grados y vuelve a casa 
+Precondición: Reeborg está en la posición (1,1), en dirección Este.
+Poscondición: Reeborg está en la posición (1,1), en dirección Oeste.
+"""
+def recolectar_depositar_regresar(): # [!] ALERTA: NO MODIFICAR CÓDIGO.
+    total = recolectar_manzanas()
+    depositar_manzanas()
+    girar_180()
+    volver_a_casa()
+    print ("¡Fue un arduo trabajo! Tuve que recolectar ",total," manzanas." )    
+    
+    
+#Ejecución del método principal - [!] ALERTA: NO MODIFICAR CÓDIGO.     
+recolectar_depositar_regresar()          
+        
