@@ -1,0 +1,89 @@
+"""Descripción: Este codigo permite que reeborg realice la
+busqueda de un punto para marcarlo, dejando una estrella y 
+regresando a la posición original.
+Autores: Sebastian Sanchez y Diana Puentes
+Fecha: Febrero 12 de 2020"""
+
+def turn_right():
+    repeat 3:
+        turn_left()
+        
+def girar_180():
+    repeat 2:
+        turn_left()
+
+"""
+Descripción: Esta función permite mover a Reeborg hasta
+una posición (x,y), partiendo de una posicion (1,1) y
+mirar al sur
+Pre: Reborg está en (1,1) mirando al este
+Pos: Reborg está en (x,y) mirando al sur
+"""
+
+def mover_hasta_punto(x,y):
+    contador = 1
+    contador2 = 1
+    while (contador < x):
+        move()
+        contador = contador+1
+    turn_left()
+    while (contador2 < y):
+        move()
+        contador2 = contador2+1
+    girar_180()
+    
+    
+"""
+Descripción: Esta función permite mover a Reeborg hasta
+la posición inicial, partiendo de una posicion (x,y),
+dejando un camino marcado de estrellas de forma vertical
+sobre y.
+Pre: Reborg está en (x,y) mirando al sur
+Pos: Reborg está en (1,1) mirando al este
+"""
+    
+def marcar_volviendo():
+    while front_is_clear():
+        put()
+        move()
+    put()
+    turn_right()
+    while front_is_clear():
+        move()
+    girar_180()
+    done()
+
+"""
+Descripción: Esta función permite mover a Reeborg desde
+una posición inicial, hasta otra, haciendo montañas de estrellas
+y regresando a la misma posicion inicial
+Pre: Reborg está en (1,1) mirando al este
+Pos: Reborg está en (1,1) mirando al este
+"""
+    
+def dibujar_montana():
+    mover_hasta_punto(5,5)
+    marcar_volviendo()
+
+"""dibujar_montana()"""
+
+"""
+Descripción: Esta función permite mover a Reeborg desde
+una posición inicial, hasta otra, haciendo montañas de estrellas
+y regresando a la misma posicion inicial
+Pre: Reborg está en (1,1) mirando al este
+Pos: Reborg está en (1,1) mirando al este
+"""
+
+def dibujar_montana_gmp(x,t):
+    if t=='G':
+        mover_hasta_punto(x,10)
+        marcar_volviendo()
+    elif t=='M':
+        mover_hasta_punto(x,5)
+        marcar_volviendo()
+    elif t=='P':
+        mover_hasta_punto(x,2)
+        marcar_volviendo()
+        
+dibujar_montana_gmp(10,'M')
