@@ -1,0 +1,78 @@
+"""Descripción: Este codigo permite que reeborg realice la
+busqueda de un punto para marcarlo, dejando una estrella y 
+regresando a la posición original.
+Autores: Sebastian Sanchez y Diana Puentes
+Fecha: Febrero 12 de 2020"""
+
+def turn_right():
+    repeat 3:
+        turn_left()
+        
+def girar_180():
+    repeat 2:
+        turn_left()
+
+"""
+Descripción: Esta función permite mover a Reeborg hasta
+un punto dado y marcar dicha posición con una estrella
+Pre: Reborg está en (1,1) mirando al este
+Pos: Reborg está en (4,8) mirando al oeste
+"""
+
+def mover_hasta_punto(x,y):
+    contador = 1
+    contador2 = 1
+    while (contador < x):
+        move()
+        contador = contador+1
+    turn_left()
+    while (contador2 < y):
+        move()
+        contador2 = contador2+1
+    
+    turn_left()
+    turn_left()
+    
+"""
+Descripción: Esta función permite mover a Reeborg hasta
+la posición inicial.
+Pre: Reborg está en (4,8) mirando al oeste
+Pos: Reborg está en (1,1) mirando al este
+"""
+    
+def marcar_volviendo():
+    while front_is_clear():
+        put()
+        move()
+    put()
+    turn_right()
+    while front_is_clear():
+        move()
+    girar_180()
+    done()
+    """contador3 = 2
+    contador4 = 2
+    while (contador3 > 1):
+        put()
+        move()
+        contador3 = contador3-1
+    put()
+    turn_right()
+    while (contador4 > 1):
+        move()
+        contador4 = contador4-1
+    turn_left()"""
+    
+"""
+Descripción: Esta función permite mover a Reeborg desde
+una posición inicial, hasta otra dependiendo los parámetros
+se marca con una estrella y regresa a la posición (1,1)
+Pre: Reborg está en (1,1) mirando al este
+Pos: Reborg está en (1,1) mirando al este
+"""
+    
+def dibujar_montaña():
+    mover_hasta_punto(2,3)
+    marcar_volviendo()
+
+dibujar_montaña()
