@@ -1,0 +1,239 @@
+set_max_nb_steps(2000)
+
+def t_r():
+    repeat 3:  
+        turn_left()
+
+def recorrido():
+    cont = 0
+    
+    while front_is_clear():
+        temp=0
+        move()
+        
+        while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+    
+    turn_left()
+    move()
+    turn_left()
+    
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+    
+    t_r()
+    move()
+    t_r()
+    
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+    
+    turn_left()
+    move()
+    turn_left()
+    
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1 
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+    
+    t_r()
+    move()
+    t_r()
+    
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+    
+    turn_left()
+    move()
+    turn_left()
+    
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1 
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+    
+    t_r()
+    move()
+    t_r()
+    
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1 
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+    
+    turn_left()
+    move()
+    turn_left()
+    
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+    
+    t_r()
+    move()
+    t_r()
+    
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+    
+    turn_left()
+    move()
+    turn_left()
+    
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1 
+            cont = cont +1
+        temp = 0
+   
+    
+    
+    while object_here():
+            take()
+            temp += 1
+            cont = cont +1
+    
+    turn_left()
+    
+    while front_is_clear():
+        
+        move()
+    turn_left()
+    
+    repeat 8:
+        move()
+        if not object_here():
+            repeat 3:
+                put("banana")
+            cont = cont -3
+    move()
+    turn_left()
+    move()
+    turn_left()
+    move()
+    repeat 6:
+        move()
+        if not object_here():
+            repeat 7:
+                put("banana")
+            cont = cont -7
+            
+    move()
+    move()
+    turn_left()
+    move()
+    turn_left()
+    print("Al final me sobraron ",cont," bananas. No puedo verderlas como un racimo grande")
+    
+think(1)
+recorrido()
