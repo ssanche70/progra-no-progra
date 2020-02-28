@@ -1,0 +1,329 @@
+set_max_nb_steps(2000)
+
+def t_r():
+    repeat 3:  
+        turn_left()  
+       
+def b_h():
+    t_r()
+    while front_is_clear():
+        move()
+       
+    repeat 2:
+        turn_left()
+       
+def recolectar():
+    turn_left()
+   
+    cont = 0
+    racpeq = 0
+    racmed = 0
+    racgra = 0
+   
+    while front_is_clear():
+        temp=0
+        move()
+        while object_here():
+            take()
+            temp += 1
+            cont = cont + (temp*500)
+        if temp > 0 and temp < 4:
+            racpeq += 1
+           
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+   
+    t_r()  
+    move()
+   
+    while object_here():
+            take()
+            temp += 1
+    if temp > 0 and temp < 4:
+        racpeq += 1
+        cont = cont + (temp*500)
+    elif temp > 3 and temp < 8:
+        racmed += 1
+    elif temp > 8:
+        racgra += 1
+       
+    t_r()
+
+   
+   
+    while front_is_clear():
+        temp = 0
+        move()
+        while object_here():
+            take()
+            temp += 1
+        if temp > 0 and temp < 4 :
+            racpeq += 1
+            cont = cont + (temp*500)
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+   
+    turn_left()
+    move()
+   
+    while object_here():
+        take()
+        temp += 1
+    if temp > 0 and temp < 4:
+        racpeq += 1
+        cont = cont + (temp*500)
+    elif temp > 3 and temp < 8:
+        racmed += 1
+    elif temp > 8:
+        racgra += 1
+       
+    turn_left()
+   
+    while front_is_clear():
+        temp = 0
+        move()
+        while object_here():
+            take()
+            temp += 1
+        if temp > 0 and temp < 4 :
+            racpeq += 1
+            cont = cont + (temp*500)
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+       
+    t_r()  
+    move()
+   
+    while object_here():
+        take()
+        temp += 1
+    if temp > 0 and temp < 4:
+        racpeq += 1
+        cont = cont + (temp*500)
+    elif temp > 3 and temp < 8:
+        racmed += 1
+    elif temp > 8:
+        racgra += 1
+       
+    t_r()
+   
+    while front_is_clear():
+        temp = 0
+        move()
+        while object_here():
+            take()
+            temp += 1
+        if temp > 0 and temp < 4 :
+            racpeq += 1
+            cont = cont + (temp*500)
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+       
+    turn_left()
+    move()
+   
+    while object_here():
+        take()
+        temp += 1
+    if temp > 0 and temp < 4:
+        racpeq += 1
+        cont = cont + (temp*500)
+    elif temp > 3 and temp < 8:
+        racmed += 1
+    elif temp > 8:
+        racgra += 1
+       
+    turn_left()
+   
+    while front_is_clear():
+        temp = 0
+        move()
+        while object_here():
+            take()
+            temp += 1
+        if temp > 0 and temp < 4 :
+            racpeq += 1
+            cont = cont + (temp*500)
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+   
+    t_r()  
+    move()
+   
+    while object_here():
+        take()
+        temp += 1
+    if temp > 0 and temp < 4:
+        racpeq += 1
+        cont = cont + (temp*500)
+    elif temp > 3 and temp < 8:
+        racmed += 1
+    elif temp > 8:
+        racgra += 1
+       
+    t_r()
+   
+    while front_is_clear():
+        temp = 0
+        move()
+        while object_here():
+            take()
+            temp += 1
+        if temp > 0 and temp < 4 :
+            racpeq += 1
+            cont = cont + (temp*500)
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+       
+    turn_left()
+    move()
+   
+    while object_here():
+        take()
+        temp += 1
+    if temp > 0 and temp < 4:
+        racpeq += 1
+        cont = cont + (temp*500)
+    elif temp > 3 and temp < 8:
+        racmed += 1
+    elif temp > 8:
+        racgra += 1
+       
+    turn_left()
+   
+    while front_is_clear():
+        temp = 0
+        move()
+        while object_here():
+            take()
+            temp += 1
+        if temp > 0 and temp < 4 :
+            racpeq += 1
+            cont = cont + (temp*500)
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+   
+    t_r()  
+    move()
+   
+    while object_here():
+        take()
+        temp += 1
+    if temp > 0 and temp < 4:
+        racpeq += 1
+        cont = cont + (temp*500)
+    elif temp > 3 and temp < 8:
+        racmed += 1
+    elif temp > 8:
+        racgra += 1
+       
+    t_r()
+   
+    while front_is_clear():
+        temp = 0
+        move()
+        while object_here():
+            take()
+            temp += 1
+        if temp > 0 and temp < 4 :
+            racpeq += 1
+            cont = cont + (temp*500)
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+       
+    turn_left()
+    move()
+   
+    while object_here():
+        take()
+        temp += 1
+    if temp > 0 and temp < 4:
+        racpeq += 1
+        cont = cont + (temp*500)
+    elif temp > 3 and temp < 8:
+        racmed += 1
+    elif temp > 8:
+        racgra += 1
+       
+    turn_left()
+   
+    while front_is_clear():
+        temp = 0
+        move()
+        while object_here():
+            take()
+            temp += 1
+        if temp > 0 and temp < 4 :
+            racpeq += 1
+            cont = cont + (temp*500)
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+       
+    t_r()  
+    move()
+   
+    while object_here():
+        take()
+        temp += 1
+    if temp > 0 and temp < 4:
+        racpeq += 1
+        cont = cont + (temp*500)
+    elif temp > 3 and temp < 8:
+        racmed += 1
+    elif temp > 8:
+        racgra += 1
+       
+    t_r()
+   
+    while front_is_clear():
+        temp = 0
+        move()
+        while object_here():
+            take()
+            temp += 1
+        if temp > 0 and temp < 4 :
+            racpeq += 1
+            cont = cont + (temp*500)
+        elif temp > 3 and temp < 8:
+            racmed += 1
+        elif temp > 8:
+            racgra += 1
+        temp = 0
+   
+    new = racmed * 2000
+    new2 = racgra * 4000
+    b_h()
+   
+   
+    print("Buena cosecha, ahora tenemos: $",cont ,"por",racpeq,"racimos pequeños, $",new,"por",racmed,"racimos medianos, $",new2,"por",racgra,"racimos grandes")
+
+   
+think(10)    
+recolectar()
